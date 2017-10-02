@@ -19,6 +19,7 @@ import java.util.concurrent.TimeUnit;
  * All rights reserved.
  * Created by GeniusV on 9/28/17.
  */
+@SuppressWarnings({"SpringAutowiredFieldsWarningInspection", "unchecked"})
 @Service
 public class RedisSessionDao extends AbstractSessionDAO{
     private long expiredTime = 1800000;
@@ -82,8 +83,7 @@ public class RedisSessionDao extends AbstractSessionDAO{
 
     @Override
     public Collection<Session> getActiveSessions() {
-        Collection<Session> collection = redisTemplate.keys("*");
-        return collection;
+        return (Collection<Session>) redisTemplate.keys("*");
     }
 
     public long getExpiredTime() {

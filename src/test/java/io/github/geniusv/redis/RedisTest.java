@@ -18,12 +18,14 @@ import javax.annotation.Resource;
  * Created by GeniusV on 9/26/17.
  */
 
+@SuppressWarnings("unchecked")
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 @WebAppConfiguration
 public class RedisTest {
 
     @Resource(name = "sessionRedis")
+    private
     RedisTemplate redisTemplate;
 
     @Test
