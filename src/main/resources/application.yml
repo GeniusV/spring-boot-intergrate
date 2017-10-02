@@ -1,0 +1,50 @@
+spring:
+  thymeleaf:
+    mode: HTML
+    cache: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring_boot_demo?useSSL=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  redis:
+     database: 0
+     host: 127.0.0.1
+     port: 6379
+     password:
+     timeout: 0
+     pool:
+         max-active: 8
+         max-wait: -1
+         max-idle: 8
+         min-idle: 0
+  session:
+    store-type: none
+
+
+mybatis:
+  type-aliases-package: io.github.geniusv.domain.model
+  mapper-locations: classpath:io/github/geniusv/domain/mapper/*.xml
+
+redis:
+  session:
+    hostname: localhost
+    password:
+    port: 6379
+    index: 1
+    maxIdle: 8
+    maxTotal: 8
+    maxWaitMillis: -1
+    testOnBorrow: false
+
+logging:
+  level:
+    io.github.geniusv: debug
+
+
+
+
+
+
+
+

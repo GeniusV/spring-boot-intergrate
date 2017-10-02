@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+    <head th:include="common"></head>
+</head>
+<body>
+<div class="container">
+    <!--/*@thymesVar id="name" type="java.lang.String"*/-->
+    <p th:text="'hello '+ ${name}">
+    </p>
+    This is the hello page.
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <classPathEntry
+            location="/Users/GeniusV/.m2/repository/mysql/mysql-connector-java/5.1.39/mysql-connector-java-5.1.39.jar"/>
+
+    <context id="mysqlgenerator" targetRuntime="MyBatis3">
+
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <!--suppress MybatisGenerateCustomPluginInspection -->
+        <plugin type="io.github.geniusv.mybatis.generator.plugin.GenerateSelectPrimaryKeyByExamplePlugin"/>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/spring_boot_demo?useSSL=true"
+                        userId="root"
+                        password="123456" />
+
+        <javaModelGenerator targetPackage="io.github.geniusv.domain.model" targetProject="src/main/java" />
+        <sqlMapGenerator targetPackage="io.github.geniusv.domain.mapper" targetProject="src/main/resources" />
+        <javaClientGenerator type="XMLMAPPER" targetPackage="io.github.geniusv.domain.mapper" targetProject="src/main/java" />
+
+        <!--<javaModelGenerator targetPackage="dao.model" targetProject="src/main/java" />-->
+        <!--<sqlMapGenerator targetPackage="dao.mapper" targetProject="src/main/resources" />-->
+        <!--<javaClientGenerator type="XMLMAPPER" targetPackage="dao.mapper" targetProject="src/main/java" />-->
+
+        <table tableName="v_user" domainObjectName="User"/>
+        <table tableName="v_role" domainObjectName="Role"/>
+        <table tableName="v_user_role" domainObjectName="UserRole"/>
+    </context>
+</generatorConfiguration>
