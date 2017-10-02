@@ -22,7 +22,6 @@ public class MapperGenerator {
     @Before
     public void before() {
         configFile = new File("/Users/GeniusV/Documents/Java/IdeaProjects/spring-boot-intergrate/src/main/resources/generatorConfig.xml");
-
     }
 
     @Test

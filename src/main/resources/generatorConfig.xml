@@ -11,6 +11,10 @@
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
         <!--suppress MybatisGenerateCustomPluginInspection -->
         <plugin type="io.github.geniusv.mybatis.generator.plugin.GenerateSelectPrimaryKeyByExamplePlugin"/>
+        <!--suppress MybatisGenerateCustomPluginInspection -->
+        <plugin type="io.github.geniusv.mybatis.generator.plugin.GenerateSelectLimitedPrimaryKeyByExample"/>
+        <!--suppress MybatisGenerateCustomPluginInspection -->
+        <plugin type="io.github.geniusv.mybatis.generator.plugin.RedisCachePlugin"/>
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
                         connectionURL="jdbc:mysql://localhost:3306/spring_boot_demo?useSSL=true"

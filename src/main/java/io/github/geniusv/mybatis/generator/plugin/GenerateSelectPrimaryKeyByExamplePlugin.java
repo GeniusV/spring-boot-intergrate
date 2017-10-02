@@ -75,9 +75,10 @@ public class GenerateSelectPrimaryKeyByExamplePlugin extends PluginAdapter {
     public boolean clientGenerated(Interface interfaze, TopLevelClass topLevelClass, IntrospectedTable introspectedTable) {
         interfaze.addMethod(generateSelectPrimaryKeyByExampleMethod(introspectedTable));
 
-        //add @Repository
-        interfaze.addImportedType(new FullyQualifiedJavaType("org.springframework.stereotype.Repository"));
-        interfaze.addAnnotation("@Repository");
+        if (!interfaze.getAnnotations().contains("@Repository")) {
+            interfaze.addImportedType(new FullyQualifiedJavaType("org.springframework.stereotype.Repository"));
+            interfaze.addAnnotation("@Repository");
+        }
         return true;
     }
 

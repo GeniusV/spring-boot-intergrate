@@ -1,6 +1,7 @@
 package io.github.geniusv.domain.mapper;
 
 import io.github.geniusv.domain.model.User;
+import io.github.geniusv.domain.model.UserExample;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,6 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
+
+import java.util.List;
+
 
 /**
  * Copyright 2017 GeniusV
@@ -33,16 +37,14 @@ public class UserMapperTest {
         Assert.assertEquals("admin", user.getUserName());
     }
 
-
-    public static Logger getLogger() {
-        return logger;
-    }
-
-    public UserMapper getUserMapper() {
-        return userMapper;
-    }
-
-    public void setUserMapper(UserMapper userMapper) {
-        this.userMapper = userMapper;
+    @Test
+    public void testSelectPrimaryKeyByExample() {
+        UserExample userExample = new UserExample();
+        userExample.or().andUserNameEqualTo("admin");
+        List<Long> list = userMapper.selectPrimaryKeyByExample(userExample);
+        logger.info(list.toString());
+        Assert.assertEquals(1, list.size());
+        Long id = list.get(0);
+        Assert.assertTrue(id == 1L);
     }
 }
