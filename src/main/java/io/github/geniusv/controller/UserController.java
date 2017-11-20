@@ -19,14 +19,14 @@ import java.util.UUID;
  * All rights reserved.
  * Created by GeniusV on 9/25/17.
  */
-@RestController
+@Controller
 public class UserController {
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @RequestMapping("/hello")
-    public String hello(Model model, HttpSession session) {
+    public String hello() {
         Session session1 = SecurityUtils.getSubject().getSession();
         session1.setAttribute("test", "test");
-        return "hello";
+        return "/hello";
     }
 }
