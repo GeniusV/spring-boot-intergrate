@@ -27,6 +27,6 @@ public class UserController {
     public String hello(Model model, HttpSession session) {
         Session session1 = SecurityUtils.getSubject().getSession();
         session1.setAttribute("test", "test");
-        return session.getId();
+        return "hello";
     }
 }
