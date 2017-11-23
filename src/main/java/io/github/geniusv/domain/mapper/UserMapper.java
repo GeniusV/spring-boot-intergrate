@@ -2,9 +2,10 @@ package io.github.geniusv.domain.mapper;
 
 import io.github.geniusv.domain.model.User;
 import io.github.geniusv.domain.model.UserExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface UserMapper {
@@ -97,12 +98,12 @@ public interface UserMapper {
     int updateByPrimaryKey(User record);
 
     /**
-    * @mbg.generated
-    */
+     * @mbg.generated
+     */
     List<Long> selectPrimaryKeyByExample(UserExample example);
 
     /**
-    * @mbg.generated
-    */
+     * @mbg.generated
+     */
     List<Long> selectPrimaryKeyLimitedByExample(@Param("offset") Long offset, @Param("num") Long num, @Param("example") UserExample example);
 }

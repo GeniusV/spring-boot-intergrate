@@ -21,17 +21,16 @@ import java.util.concurrent.TimeUnit;
  */
 @SuppressWarnings({"SpringAutowiredFieldsWarningInspection", "unchecked"})
 @Service
-public class RedisSessionDao extends AbstractSessionDAO{
-    private long expiredTime = 1800000;
+public class RedisSessionDao extends AbstractSessionDAO {
     private static final Logger logger = LoggerFactory.getLogger(RedisSessionDao.class);
-
+    private long expiredTime = 1800000;
     @Autowired
     @Qualifier("sessionRedis")
     private RedisTemplate redisTemplate;
 
     @Override
     protected Serializable doCreate(Session session) {
-        logger.debug("doCreate: ["+session.getId()+"]");
+        logger.debug("doCreate: [" + session.getId() + "]");
         Serializable sessionId = this.getSessionIdGenerator().generateId(session);
         this.assignSessionId(session, sessionId);
         redisTemplate.opsForValue().set(session.getId(), session, expiredTime, TimeUnit.MILLISECONDS);
@@ -48,7 +47,7 @@ public class RedisSessionDao extends AbstractSessionDAO{
         if (session == null) {
             logger.debug("doReadSession: get session null");
         } else {
-            logger.debug("doReadSession: ["+ session.getId() + "]");
+            logger.debug("doReadSession: [" + session.getId() + "]");
         }
         return session;
     }
