@@ -34,6 +34,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
 
+        <!--Reload templates without restarting the container, templates only-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -67,7 +68,20 @@
         </dependency>
 
 
-        
+        <!--Powermock, used to mock static classes-->
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-junit4</artifactId>
+            <version>1.7.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-api-mockito</artifactId>
+            <version>1.7.3</version>
+            <scope>test</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-spring</artifactId>
@@ -102,6 +116,14 @@
                 <configuration>
                     <fork>true</fork>
                 </configuration>
+                <dependencies>
+                    <!--Reload Java classes without restarting the container, classes only-->
+                    <dependency>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>springloaded</artifactId>
+                        <version>1.2.7.RELEASE</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
