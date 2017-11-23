@@ -14,7 +14,7 @@ import java.util.List;
  * All rights reserved.
  * Created by GeniusV on 10/2/17.
  */
-public class RedisCachePlugin extends PluginAdapter{
+public class RedisCachePlugin extends PluginAdapter {
     @Override
     public boolean validate(List<String> list) {
         return true;

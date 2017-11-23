@@ -14,6 +14,8 @@
  * limitations under the License.
  * <p>
  * Contains Redis support for MyBatis Cache.
+ * <p>
+ * Contains Redis support for MyBatis Cache.
  */
 /**
  * Contains Redis support for MyBatis Cache.

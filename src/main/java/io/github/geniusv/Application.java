@@ -20,13 +20,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @MapperScan("io.github.geniusv.domain.mapper")
 public class Application {
 
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+
     @RequestMapping(value = "/")
     @ResponseBody
     public String helloWorld() {
         return "hello world";
-    }
-
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
     }
 }

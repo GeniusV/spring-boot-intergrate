@@ -70,9 +70,8 @@ final class RedisConfigurationBuilder {
     /**
      * Parses the Config and builds a new {@link RedisConfig}.
      *
-     * @param classLoader
-     *            {@link ClassLoader} used to load the
-     *            {@code memcached.properties} file in classpath.
+     * @param classLoader {@link ClassLoader} used to load the
+     *                    {@code memcached.properties} file in classpath.
      * @return the converted {@link RedisConfig}.
      */
     public RedisConfig parseConfiguration(ClassLoader classLoader) {
